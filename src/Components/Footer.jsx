@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import logo from "../assets/logo2.webp";
 import { Link } from "react-router-dom";
+import { FaWhatsapp, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -62,9 +63,39 @@ const Footer = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-3 text-black">Social Media</h3>
                   <ul className="space-y-3 text-gray-600">
-                    <li>Whatsapp</li>
-                    <li>Facebook</li>
-                    <li>Instagram</li>
+                    <li>
+                      <a
+                        href="https://wa.me/919673754666"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:text-green-600 transition-colors"
+                      >
+                        <FaWhatsapp className="text-xl text-green-600" />
+                        <span>WhatsApp</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://facebook.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:text-blue-600 transition-colors"
+                      >
+                        <FaFacebookF className="text-xl text-blue-600" />
+                        <span>Facebook</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 hover:text-pink-600 transition-colors"
+                      >
+                        <FaInstagram className="text-xl text-pink-600" />
+                        <span>Instagram</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
