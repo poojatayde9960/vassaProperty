@@ -248,7 +248,7 @@ export default function PropertyForm() {
         formData.append("Description", data.description || "");
         formData.append("Video_url", data.videoUrl || "");
         formData.append("website_keywords", data.websiteKeyword || "");
-        
+
 
         // ================= ADDRESS =================
         formData.append("Address[flat_no]", data.flatUnit || "");
@@ -653,7 +653,7 @@ export default function PropertyForm() {
         "Viewing Gallery", "Visitor waiting area", "Volleyball court", "Waiting Lounge", "Wardrobe", "Wardrobe T.V", "Washing machine", "Water connection", "Water Conservation", "Water softener", "Water sky observatory", "WiFi", "WiFi Zone", "Yoga", "Yoga Center", "Yoga Pads",
 
     ];
-    
+
 
     // ADVERTISEMENT OPTIONS
     const advertisementOptions = [
@@ -746,7 +746,7 @@ export default function PropertyForm() {
                 }
             },
             (error) => {
-                console.log("GPS Error:", error.message);
+                // console.log("GPS Error:", error.message);
                 setAddress("Location access denied or unavailable");
             },
             {

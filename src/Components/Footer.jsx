@@ -49,11 +49,12 @@ const Footer = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-3 text-black">Contact</h3>
                   <ul className="space-y-3 break-words">
-                    <p className="text-gray-600 mb-1">+91 8585 666 322</p>
-                    <p className="text-gray-600 mb-1">vassaproperties@gmail.com</p>
+                    <p className="text-gray-600 mb-1">+91  9673754666 </p>
+                    <p className="text-gray-600 mb-1">+91  9765717666 </p>
+                    <p className="text-gray-600 mb-1">contact.vassaproperties@gmail.com</p>
                     <p className="text-gray-600">
-                      Golden City Center,<br />
-                      Chhatrapati <br /> Sambhajinagar 431001
+                      Office No : 238, second Floor, Golden City Center, near Prozone Mall, MIDC Industrial Area, Chilkalthana ,
+                      <br /> Chhatrapati Sambhajinagar, Maharashtra 431003
                     </p>
                   </ul>
                 </div>

@@ -300,7 +300,7 @@ useEffect(() => {
   ref={enterButtonRef}
   onClick={() => {
     // Add your custom logic
-    console.log('Enter button clicked!');
+    // console.log('Enter button clicked!');
     navigate('/dashboard');
   }}
   onMouseEnter={() => setIsButtonAnimated(true)}

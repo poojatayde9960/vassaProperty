@@ -184,7 +184,7 @@ export default function ProjectForm() {
   // Auto location
   useEffect(() => {
     if (!navigator.geolocation) {
-      console.log("Geolocation is not supported");
+      // console.log("Geolocation is not supported");
       return;
     }
 
@@ -354,7 +354,6 @@ export default function ProjectForm() {
         mediaFormData.append("pdf_doc", formValues.document[0]); // ← backend key
       }
 
-      // Images → यह बिल्कुल सही key है आपके backend के लिए
       if (formValues.projectImages && formValues.projectImages.length > 0) {
         Array.from(formValues.projectImages).forEach((file) => {
           mediaFormData.append("Other_images", file);
@@ -365,7 +364,7 @@ export default function ProjectForm() {
       if (mediaFormData.has("pdf_doc") || mediaFormData.has("Other_images")) {
         try {
           mediaResponse = await uploadMedia({ id: projectId, body: mediaFormData }).unwrap();
-          console.log("Upload successful:", mediaResponse);
+          // console.log("Upload successful:", mediaResponse);
 
           // यहाँ से URLs निकालो (अपने backend response के हिसाब से)
           setUploadedMedia({

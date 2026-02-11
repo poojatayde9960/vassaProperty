@@ -238,7 +238,7 @@ useEffect(() => {
 <button
   ref={enterButtonRef}
   onClick={() => {
-    console.log('Button clicked!');
+    // console.log('Button clicked!');
     navigate('/your-route');
   }}
   // ... other props

@@ -91,14 +91,14 @@ const Navbar = () => {
         }`}
     >
 
-      <div className="max-w-10xl mx-auto py-3 flex justify-between items-center px-4 md:px-8 lg:px-16">
+      <div className="max-w-10xl mx-auto py-2 md:py-3 flex justify-between items-center px-3 sm:px-4 md:px-8 lg:px-16">
 
-        {/* Logo */}
+        {/* Logo - Responsive sizing */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
           <img
             src={isHeroPage && !scrolled ? whiteLog : Logo}
             alt="Vassa Properties Logo"
-            className="h-14 object-contain"
+            className="h-10 sm:h-12 md:h-14 object-contain"
           />
         </div>
 
@@ -165,9 +165,9 @@ const Navbar = () => {
 
 
 
-        <div className="flex items-center gap-3 relative" ref={dropdownRef}>
-          {/* Free List Property Button - Professional animated button */}
-          <div className="relative">
+        <div className="flex items-center gap-2 sm:gap-3 relative" ref={dropdownRef}>
+          {/* Free List Property Button - Professional animated button - Responsive */}
+          <div className="relative hidden sm:block">
             <button
               ref={enterButtonRef}
               onMouseEnter={() => setIsButtonAnimated(true)}
@@ -176,12 +176,13 @@ const Navbar = () => {
               onAnimationEnd={() => setIsButtonAnimated(false)}
               className="
       relative
-      px-8 py-2
-      border-2 border-[#851524]
+      px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2 lg:px-8 lg:py-2
+      border-2 border-yellow-400
       text-[#851524]
       rounded-full
-      tracking-widest
+      tracking-wide sm:tracking-wider md:tracking-widest
       uppercase
+      text-[10px] sm:text-xs md:text-sm
       font-semibold
       overflow-hidden
       transition-all duration-300 ease-out
@@ -219,7 +220,7 @@ const Navbar = () => {
               ></span>
 
               {/* Glow ring effect */}
-              <span className="absolute inset-0 rounded-full 
+              <span className="absolute inset-0 rounded-full  border-yellow-
                              bg-gradient-to-r from-[#851524] via-yellow-400 to-[#851524]
                              opacity-0 group-hover:opacity-20 blur-xl
                              transition-opacity duration-500">
@@ -232,8 +233,10 @@ const Navbar = () => {
     underline-offset-4
     transition-all duration-300
     font-bold
+    whitespace-nowrap
   ">
-                {enterButtonText}
+                <span className="hidden md:inline ">{enterButtonText}</span>
+                <span className="md:hidden">List Free</span>
               </span>
 
             </button>
@@ -241,16 +244,20 @@ const Navbar = () => {
 
 
 
+
           {user?.user?.name ? (
             <div className="relative">
-              {/* Username Button */}
+              {/* Username Button - Responsive */}
               <div
                 onClick={() => setUserDropdown((prev) => !prev)}
-                className="flex items-center gap-2 bg-yellow-400 border border-[#851524] 
-                 text-black px-4 py-2 rounded-full font-semibold cursor-pointer 
+                className="flex items-center gap-1.5 sm:gap-2 bg-yellow-400 border border-[#851524] 
+                 text-black px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded-full 
+                 text-xs sm:text-sm md:text-base font-semibold cursor-pointer 
                  hover:bg-yellow-300 transition"
               >
-                <FaUser className="text-[#851524]" /> {user.user.name}
+                <FaUser className="text-[#851524] text-xs sm:text-sm" />
+                <span className="hidden sm:inline">{user.user.name}</span>
+                <span className="sm:hidden">{user.user.name.split(' ')[0]}</span>
               </div>
 
               {/* Dropdown */}
@@ -328,13 +335,16 @@ const Navbar = () => {
               )}
             </div>
           ) : (
-            // Login Button
+            // Login Button - Responsive
             <button
               onClick={() => setOpenLogin(true)}
-              className="flex items-center gap-2 bg-yellow-400 border border-[#851524] 
-               text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-300 transition"
+              className="flex items-center gap-1.5 sm:gap-2 bg-yellow-400 border border-[#851524] 
+               text-black px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2 rounded-full 
+               text-xs sm:text-sm md:text-base font-semibold hover:bg-yellow-300 transition"
             >
-              <FaUserLock className="text-[#851524]" /> Login
+              <FaUserLock className="text-[#851524] text-xs sm:text-sm" />
+              <span className="hidden sm:inline">Login</span>
+              <span className="sm:hidden">Login</span>
             </button>
           )}
 
@@ -355,7 +365,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-[72px] left-0 w-full bg-[#851524] backdrop-blur-lg z-50 overflow-x-hidden">
+        <div className="md:hidden fixed top-[60px] left-0 w-full bg-[#851524] backdrop-blur-lg z-50 overflow-x-hidden">
           <div className="px-8 py-10 space-y-8 text-center">
             <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block text-xl font-semibold text-white hover:text-yellow-400 transition">
               About
@@ -371,6 +381,14 @@ const Navbar = () => {
             </Link>
             <Link to="/list" onClick={() => setMobileMenuOpen(false)} className="block text-xl font-semibold text-white hover:text-yellow-400 transition">
               List Properties
+            </Link>
+
+            {/* Free List Property button for mobile */}
+            <Link to="/list" onClick={() => setMobileMenuOpen(false)}>
+              <button className="mt-4 w-full max-w-sm mx-auto bg-yellow-400 border-2 border-white text-[#851524] font-bold py-3 rounded-full hover:bg-yellow-300 transition shadow-2xl flex items-center justify-center gap-2">
+                <PlusCircle size={20} />
+                {enterButtonText}
+              </button>
             </Link>
 
             {/* {!user?.user?.name && (
