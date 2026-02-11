@@ -101,14 +101,14 @@ const HeroSection = () => {
       </div>
 
       {/* SCROLL DOWN ICON */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30">
+      <div className="absolute bottom-1 sm:bottom-5 md:bottom-9 left-1/2 -translate-x-1/2 z-30">
         <div
           className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 
           rounded-full bg-[#D9D9D940] opacity-60 
           flex items-center justify-center 
           border border-white/20"
         >
-          <span className="text-white text-center text-xs sm:text-xl md:text-lg font-bold">
+          <span className="text-white text-center text-xs sm:text-sm md:text-lg font-bold">
             Scroll Down
           </span>
         </div>
