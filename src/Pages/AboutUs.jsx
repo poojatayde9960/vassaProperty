@@ -11,7 +11,7 @@ const AboutUs = () => {
     const scrollAmount = window.innerWidth < 768 ? 790 : 650;
     window.scrollBy({ top: scrollAmount, behavior: "smooth" });
   };
-
+  // a
   const handleScroll = () => {
     setShowScrollUp(window.scrollY > 200);
   };
