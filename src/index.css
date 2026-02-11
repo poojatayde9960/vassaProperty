@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+
+/* iOS Safari select fix */
+@supports (-webkit-touch-callout: none) {
+
+  select,
+  input {
+    -webkit-appearance: none;
+    /* Remove default iOS style */
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    /* iOS zoom fix for inputs/selects */
+  }
+}
+
+/* global css */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(100%)
+  }
+}
+
+/* Shimmer animation for Enter button */
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+
+  50% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+/* Bounce animation for Enter button */
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Pulse glow animation */
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(133, 21, 36, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(133, 21, 36, 0.6), 0 0 40px rgba(248, 202, 19, 0.3);
+  }
+}
+
+/* Pulse scale animation for FREE badge */
+@keyframes pulseScale {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Gradient shift animation for FREE badge */
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
